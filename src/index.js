@@ -11,8 +11,8 @@ class Main extends React.Component {
         super();
         this.state = {
             currentCompany: 'Акрон',
-            startDate: '2019-11-01',
-            endDate: '2019-11-30',
+            startDate: '2020-01-01',
+            endDate: '2020-01-20',
             allCompanies: [],
             labels: [],
             data: [],
@@ -114,6 +114,10 @@ class Main extends React.Component {
             const ctx = document.getElementById('myChart');
             const myChart = new Chart(ctx, {
                 type: 'line',
+                options: {
+                    maintainAspectRatio: false,
+                    // responsive: true,
+                },
                 data: {
                     labels: this.state.labels,
                     datasets: [{
@@ -131,6 +135,8 @@ class Main extends React.Component {
 
     checkAndUpdateDate(ev, dateType) {
         const len = ev.target.value.length;
+        // console.log(ev.target.value);
+        console.log(ev.nativeEvent);
 
         if(len > 10) {
             ev.preventDefault();

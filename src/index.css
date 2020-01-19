@@ -6,8 +6,9 @@ body, html, * {
     /* color: rgba(0, 17, 255, 0.192); */
 }
 
-#myChart {
-    max-width: 90vw;
+main {
+    width: 90vw;
+    height: calc(100vh - 76px);
     margin: 0 auto;
 }
 
